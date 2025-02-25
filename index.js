@@ -17,7 +17,7 @@ const genComputerChoice=()=>{
 }
 
 const drawFunc =()=>{
-    console.log("game was draw.");
+    // console.log("game was draw.");
     msg.innerText="Draw game";
     msg.style.backgroundColor ="yellow";
 }
@@ -26,24 +26,24 @@ const showWinner=(userWin ,userChoice,compChoice)=>{
     if(userWin){
         userScore++;
         userScorePara.innerText=userScore;
-        console.log("you win!");
+        // console.log("you win!");
         msg.innerText=`you win ! ${userChoice} beats ${compChoice}`;
         msg.style.backgroundColor ="green";
     }
     else{
         compScore++;
         compScorePara.innerText=compScore;
-        console.log("you loose!");
-        msg.innerText=`you loose ! ${compChoice} beats ${userChoice}`;
+        // console.log("you loose!");
+        msg.innerText=`you lose ! ${compChoice} beats ${userChoice}`;
         msg.style.backgroundColor ="red";
     }
 }
 
 const playGame=(userChoice)=>{
-    console.log("user choice =",userChoice);
+    // console.log("user choice =",userChoice);
     //generate computer choice
     const compChoice=genComputerChoice();
-    console.log("comp choice =",compChoice);
+    // console.log("comp choice =",compChoice);
 
 
     if(userChoice === compChoice){
@@ -53,7 +53,7 @@ const playGame=(userChoice)=>{
         let userWin=true;
         if(userChoice == "rock"){
             //scissors or paper
-            userWin=compChoice =="paper"?false:true;
+            userWin=compChoice==="paper"?false:true;
         }else if(userChoice =="paper"){
             //rock or scissors
             userWin=compChoice==="scissors"? false:true;
